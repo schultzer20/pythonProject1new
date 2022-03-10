@@ -2,7 +2,7 @@ def name_age(name, age):
     print("Hello", name, ".", "Your age is:", age)
     name = input("Enter name:")
     age = input("Enter age:")
-    print(name + age)
+    return input(name + age)
 
 
 name_age("Ramona", 21)
@@ -16,34 +16,32 @@ def swap_integers(num1, num2):
     b = temp  # num1
     print(a)
     print(b)
+    return str(a) + str(b)
 
 
-swap_integers(4, 8)
-
-
-swap_integers(10, 22)
+print(swap_integers(10, 22))
 
 
 def check_numbers(num1, num2):
     if (num1 % 6 == 0 or num2 % 6 == 0) and num1 % 10 == 0 and num2 % 10 == 0:
-        print(True)
+        return True
     else:
-        print(False)
+        return False
 
 
-check_numbers(6, 10)
-
+print(check_numbers(6, 10))  # vorher hatte ich hier kein print, aber hab es nicht geschafft
+                            # dass der return value angezeigt wird
 
 def sum_up(num1, num2):
     num_list = range(num1, num2 + 1)
     if num2 > num1 > 0:
         result = sum(num_list)
-        print(result)
+        return result
     else:
-        print(0)
+        return 0
 
 
-sum_up(3, 9)
+print(sum_up(3, 9))
 
 
 def circle_area(r1, r2, r3):
@@ -54,27 +52,25 @@ def circle_area(r1, r2, r3):
     print("a1:", a1)
     print("a2:", a2)
     print("a3:", a3)
-    print(a1 + a2 + a3)  # 'return the area as combined integer'? - das was rauskommt ist kein Integer sondern ein Float
+    return r1 + r2 + r3
 
 
-circle_area(1, 2, 3)
+print(circle_area(1, 2, 3))
 
 
 def check_string(text):
-    text = input("Enter a text: ")
     string = text.lower().endswith("a") or text.lower().startswith("a")
     print(string)
 
 
-check_string(input)
+check_string("ahead")
 
 
 def triangle(row):
-    row = int(input("Number of rows: "))
     for i in range(row + 1):  # i = rows / already printing rows
         for j in range(i):  # j = columns
             print("*", end=" ")
         print()
 
 
-triangle("row")
+triangle(3)
